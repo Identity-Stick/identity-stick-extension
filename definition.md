@@ -38,7 +38,7 @@ Depending on the type of a message different operations should be take place in 
 | 2    | data       |
 
 
-The different options are listed below
+The different options are listed below.
 | option | definition                      |
 |--------|---------------------------------|
 | 1      | the option field can be ignored |
@@ -67,8 +67,8 @@ The authenticator indicates to the platform that it supports the "identity-stick
 
 - **authenticatorMakeCredential additional behaviors**  
 The authenticator sends the [authenticatorMakeCredential](https://fidoalliance.org/specs/fido-v2.0-id-20180227/fido-client-to-authenticator-protocol-v2.0-id-20180227.html#authenticatorMakeCredential) request with the following CBOR map entry in the "extensions" field to the authenticator:
-	- "identity-stick": \<attribute-list\>  
-	\<attribute-list\> is a list of all the available identity attributes the authenticator could provide to the service provider. This list MUST reference the attributes according to RFC7643 4.1. If the authenticator has limited capacity encoding as described in **2.1 identity attributes encoding** MIGHT be used.
+	- "identity-stick": *\<attribute-list\>*
+	*\<attribute-list\>* is a list of all the available identity attributes the authenticator could provide to the service provider. This list MUST reference the attributes according to RFC7643 4.1. If the authenticator has limited capacity encoding as described in **2.1 identity attributes encoding** MIGHT be used.
 
 ## Authenticator extension output
 
