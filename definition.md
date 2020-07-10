@@ -8,15 +8,21 @@ identity-stick
 [Registration](https://www.w3.org/TR/webauthn/#registration-extension) and [Authentication](https://www.w3.org/TR/webauthn/#authentication-extension)
 
 ## Client extension input
-[create()](https://w3c.github.io/webappsec-credential-management/#dom-credentialscontainer-create):
+[create()](https://w3c.github.io/webappsec-credential-management/#dom-credentialscontainer-create): A boolean value to indicate, that a list of all available attributes is requested.
+```
+partial dictionary AuthenticationExtensionsClientInputs {
+ 	bool identity-stick;
+};
+```
 
 
 
 [get():](https://w3c.github.io/webappsec-credential-management/#dom-credentialscontainer-get)An JavaScript object defined as follows:
 ```
 dictionary identityMessage{
-	required integer option; //indicating the type of response
-        optional USVString data; //JSON format
+	required integer type; 		//indicating the type of response
+        optional USVString data; 	//JSON format
+	optional integer option;	//indicating further options
 };
 
 
@@ -24,12 +30,20 @@ partial dictionary AuthenticationExtensionsClientInputs{
 	integer indentity-stick;
 };
 ```
-The different types are listed below.
+Depending on the type of a message different operations should be take place in th authenticator. The different types are listed below.
 | type | definition |
 |------|------------|
 | 0    | request    |
 | 1    | challenge  |
 | 2    | data       |
+
+
+The different options are listed below
+| option | definition                      |
+|--------|---------------------------------|
+| 1      | the option field can be ignored |
+| n > 1  | indicating the next nth message |
+
 ## Client extension processing
 None, except creating the authenticator extension input from the client extension input.
 
