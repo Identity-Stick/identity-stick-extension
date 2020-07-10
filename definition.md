@@ -30,12 +30,12 @@ partial dictionary AuthenticationExtensionsClientInputs{
 	integer indentity-stick;
 };
 ```
-Depending on the type of a message different operations should be take place in th authenticator. The different types are listed below.
+Depending on the type of a message different operations should be take place in the authenticator. The different types are listed below.
 | type | definition |
 |------|------------|
-| 0    | request    |
-| 1    | challenge  |
-| 2    | data       |
+| 1    | request    |
+| 2    | challenge  |
+| 3    | data       |
 
 
 The different options are listed below.
@@ -66,9 +66,19 @@ The client extension input encoded as a CBOR text string.
 The authenticator indicates to the platform that it supports the "identity-stick" extension via the "extensions" parameter in the [authenticatorGetInfo](https://fidoalliance.org/specs/fido-v2.0-id-20180227/fido-client-to-authenticator-protocol-v2.0-id-20180227.html#authenticatorGetInfo) response.
 
 - **authenticatorMakeCredential additional behaviors**  
-The authenticator sends the [authenticatorMakeCredential](https://fidoalliance.org/specs/fido-v2.0-id-20180227/fido-client-to-authenticator-protocol-v2.0-id-20180227.html#authenticatorMakeCredential) request with the following CBOR map entry in the "extensions" field to the authenticator:
-	- "identity-stick": *\<attribute-list\>*
-	*\<attribute-list\>* is a list of all the available identity attributes the authenticator could provide to the service provider. This list MUST reference the attributes according to RFC7643 4.1. If the authenticator has limited capacity encoding as described in **2.1 identity attributes encoding** MIGHT be used.
+The platform sends the [authenticatorMakeCredential](https://fidoalliance.org/specs/fido-v2.0-id-20180227/fido-client-to-authenticator-protocol-v2.0-id-20180227.html#authenticatorMakeCredential) request with the following CBOR map entry in the "extensions" field to the authenticator:
+	- "identity-stick": true
+The authenticator responds with the following CBOR map entry in the "extensions" fields to the authenticator:
+	- "identity-stick":  
+		- *attribute-list*: is a list of all the available identity attributes the authenticator could provide to the service provider. This list MUST reference the attributes according to RFC7643 4.1. If the authenticator has limited capacity encoding as described in **2.1 identity attributes encoding** MIGHT be used.
+
+- **authenticatorGetAssertion additional behaviors**  
+The platform sends the [authenticatorGetAssertion](https://fidoalliance.org/specs/fido-v2.0-id-20180227/fido-client-to-authenticator-protocol-v2.0-id-20180227.html#authenticatorGetAssertion) request with the following CBOR map entry in the "extensions" field to the authenticator:
+	- "identity-stick":  
+		- type (0x01):
+		- data (0x02):
+		- option (0x03):
 
 ## Authenticator extension output
+Same as the client extension output, except represented in CBOR.
 
