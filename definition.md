@@ -70,7 +70,7 @@ The platform sends the [authenticatorMakeCredential](https://fidoalliance.org/sp
 	- "identity-stick": true
 The authenticator responds with the following CBOR map entry in the "extensions" fields to the authenticator:
 	- "identity-stick":  
-		- *attribute-list*: is a list of all the available identity attributes the authenticator could provide to the service provider. This list MUST reference the attributes according to [[RFC7643 4.1.](https://tools.ietf.org/html/rfc7643#section-4.1.1) If the authenticator has limited capacity encoding as described in **2.1 identity attributes encoding** MIGHT be used.
+		- *attribute-list*: is a list of all the available identity attributes the authenticator could provide to the service provider. This list MUST reference the attributes according to [[RFC7643 4.1.](https://tools.ietf.org/html/rfc7643#section-4.1.1)] If the authenticator has limited capacity encoding as described in **2.1 identity attributes encoding** MIGHT be used.
 
 - **authenticatorGetAssertion additional behaviors**  
 The platform sends the [authenticatorGetAssertion](https://fidoalliance.org/specs/fido-v2.0-id-20180227/fido-client-to-authenticator-protocol-v2.0-id-20180227.html#authenticatorGetAssertion) request with the following CBOR map entry in the "extensions" field to the authenticator:
