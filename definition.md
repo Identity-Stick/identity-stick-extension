@@ -63,7 +63,7 @@ The client extension input encoded as a CBOR text string.
 
 ## Authenticator extension processing
 - authenticatorGetInfo additional behaviors
-The authenticator indicates to the platform that it supports the "identity-stick" extension via the "extensions" parameter in the [authenticatorGetInfo](https://fidoalliance.org/specs/fido-v2.0-id-20180227/fido-client-to-authenticator-protocol-v2.0-id-20180227.html#authenticatorGetInfo) response.
+	The authenticator indicates to the platform that it supports the "identity-stick" extension via the "extensions" parameter in the [authenticatorGetInfo](https://fidoalliance.org/specs/fido-v2.0-id-20180227/fido-client-to-authenticator-protocol-v2.0-id-20180227.html#authenticatorGetInfo) response.
 
 ## Authenticator extension output
 
