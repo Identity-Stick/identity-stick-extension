@@ -1,7 +1,7 @@
 # Attributes encoding
 The extension identity-stick references attributes according to [RFC7643 4.1.](https://tools.ietf.org/html/rfc7643#section-4.1.1). To abbreviate the attribute names the following encoding MUST be followed.
 
-# Overview of encoding
+# Overview of abbreviations
 The encoding MUST use either the name of the attribute itself, the abbreviation or the supported number. If unsupported attributes need to be used, the corresponding unsupported number MAY be used, but relying parties MAY ignore them.
 
 | **Attribute**                      | **Abbreviation** | **Supported By identity-stick** | **Supported number** | **Unsupported number** |
