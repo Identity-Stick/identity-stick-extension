@@ -2,9 +2,9 @@
 This is the protocol used for the identity-stick extension. It enables a fido token to send signed attributes about the owner of the device.
 
 # Contents
-- [Conformance]("conformance.md")
-- [Overview]("overview.md")
-- [Definition]("definition.md")
+- [Conformance](conformance.md)
+- [Overview](overview.md)
+- [Definition](definition.md)
 
 # Supported by
 The project is a finalist of the <a href= "https://prototypefund.de/">PrototypeFund round 7</a>, see <a href="https://prototypefund.de/project/identity-stick/">our project site</a> for details.
