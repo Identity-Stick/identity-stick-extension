@@ -70,7 +70,7 @@ The authenticator indicates to the platform that it supports the "identity-stick
 - **authenticatorMakeCredential additional behaviors**  
 The platform sends the [authenticatorMakeCredential](https://fidoalliance.org/specs/fido-v2.0-id-20180227/fido-client-to-authenticator-protocol-v2.0-id-20180227.html#authenticatorMakeCredential) request with the following CBOR map entry in the "extensions" field to the authenticator:
 	- "identity-stick": true
-The authenticator responds with the following CBOR map entry in the "extensions" fields to the ????authenticator???:
+The authenticator responds with the following CBOR map entry in the "extensions" fields:
 	- "identity-stick":  
 		- *response* : is a JSON encoded object containing two values: 'available-data' and 'pub_key'. 
 			- *available-data*: is a list of all the available identity attributes the authenticator could provide to the service provider. This list MUST reference the attributes according to [[RFC7643 4.1.](https://tools.ietf.org/html/rfc7643#section-4.1.1)]. If the authenticator has limited capacity encoding as described in [identity attributes encoding](identity_attributes_encoding.md) MAY be used. 
@@ -83,7 +83,7 @@ The platform sends the [authenticatorGetAssertion](https://fidoalliance.org/spec
 		- data (0x02): 
 			- *requested-attribute*: is a string indicating the type of attribute, the platform requests. This MUST reference attributes according to [[RFC7643 4.1.](https://tools.ietf.org/html/rfc7643#section-4.1.1)] or the encoding as described in [identity attributes encoding](identity_attributes_encoding.md). It should be an attribute provided by the authenticator as indicated by the *attribute-list*.
 		- option (0x03): is omitted
-The authenticator responds with the following CBOR map entry in the "extensions" fields to the ????authenticator???:
+The authenticator responds with the following CBOR map entry in the "extensions" fields:
 	- "identity-stick": 
 		- *number-message-parts*: is an integer value indicating the number of parts the requested attribute will be split into for transport. If the requested attribute is not part of the attributes provided by the authenticator, the response should be -1. 
 
@@ -94,7 +94,7 @@ The platform sends the [authenticatorGetAssertion](https://fidoalliance.org/spec
 			- *requested-attribute*: is a string indicating the type of attribute, the platform requests. This MUST reference attributes according to [[RFC7643 4.1.](https://tools.ietf.org/html/rfc7643#section-4.1.1)] or the encoding as described in [identity attributes encoding](identity_attributes_encoding.md). It should be an attribute provided by the authenticator as indicated by the *attribute-list*.
 		- option (0x03):
 			- *next-requested-part*: is an integer indicating, which part of the attribute is requested as the next part. 
-The authenticator responds with the following CBOR map entry in the "extensions" fields to the ????authenticator???:
+The authenticator responds with the following CBOR map entry in the "extensions" fields:
 	- "identity-stick": 
 		- *message-part*: is a String value with the next part of the attribute value. The attribute value MUST be a JSON String containing the value of the attribute and a signed hash of it.  the number of parts the requested attribute will be split into for transport. If the requested attribute is not part of the attributes provided by the authenticator, the response should be -1. 
 
