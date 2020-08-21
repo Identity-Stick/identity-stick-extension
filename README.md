@@ -5,6 +5,7 @@ This is the protocol used for the identity-stick extension. It enables a fido to
 - [Conformance](conformance.md)
 - [Overview](overview.md)
 - [Definition](definition.md)
+- [Attribute abbreviations](identity_attributes_encoding.md)
 
 # Supported by
 The project is a finalist of the <a href= "https://prototypefund.de/">PrototypeFund round 7</a>, see <a href="https://prototypefund.de/project/identity-stick/">our project site</a> for details.
