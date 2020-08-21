@@ -76,7 +76,7 @@ The authenticator responds with the following CBOR map entry in the "extensions"
 			- *available-data*: is a list of all the available identity attributes the authenticator could provide to the service provider. This list MUST reference the attributes according to [[RFC7643 4.1.](https://tools.ietf.org/html/rfc7643#section-4.1.1)]. If the authenticator has limited capacity encoding as described in [identity attributes encoding](identity_attributes_encoding.md) MAY be used. 
 			- *pub_key*: is a String containing the URL, where the public key used for signing the attributes is stored. If the authenticator has limited capacity, the URL MAY be send like a attribute via a data message. If this is the case, the *pub_key* MUST have the value 'REQUEST'.
 
-- **authenticatorGetAssertion additional behaviors**  
+- **authenticatorGetAssertion additional behaviors - message type request**  
 The platform sends the [authenticatorGetAssertion](https://fidoalliance.org/specs/fido-v2.0-id-20180227/fido-client-to-authenticator-protocol-v2.0-id-20180227.html#authenticatorGetAssertion) request with the following CBOR map entry in the "extensions" field to the authenticator:
 	- "identity-stick":  
 		- type (0x01): 1
@@ -87,6 +87,7 @@ The authenticator responds with the following CBOR map entry in the "extensions"
 	- "identity-stick": 
 		- *number-message-parts*: is an integer value indicating the number of parts the requested attribute will be split into for transport. If the requested attribute is not part of the attributes provided by the authenticator, the response should be -1. 
 
+- **authenticatorGetAssertion additional behaviors - message type data**  
 The platform sends the [authenticatorGetAssertion](https://fidoalliance.org/specs/fido-v2.0-id-20180227/fido-client-to-authenticator-protocol-v2.0-id-20180227.html#authenticatorGetAssertion) request with the following CBOR map entry in the "extensions" field to the authenticator:
 	- "identity-stick":  
 		- type (0x01): 2
