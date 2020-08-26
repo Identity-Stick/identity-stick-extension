@@ -102,3 +102,7 @@ The authenticator responds with the following CBOR map entry in the "extensions"
 
 ## Authenticator extension output
 Same as the client extension output, except represented in CBOR.
+
+
+## Sequence diagram
+![Sequence diagram of extension](ressources/identity-stick_extension_sequence_diagram.png)
